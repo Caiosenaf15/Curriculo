@@ -70,7 +70,7 @@ function mostrarEmail() {
 }
 
 function copiarEmail() {
-    const email = 'caiofreitas15@yahoo.com.br';
+    const email = 'caiosenaf15@gmail.com';
     
     // Copiar para área de transferência
     navigator.clipboard.writeText(email).then(() => {
