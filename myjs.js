@@ -58,3 +58,34 @@ window.addEventListener('scroll', function() {
         menu.style.transform = 'translateY(-100%)';
     }
 });
+
+function mostrarEmail() {
+    const popup = document.getElementById('popup-email');
+    popup.style.display = 'block';
+
+    // Fecha o pop-up depois de 5 segundos caso não clique nele
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 5000);
+}
+
+function copiarEmail() {
+    const email = 'caiofreitas15@yahoo.com.br';
+    
+    // Copiar para área de transferência
+    navigator.clipboard.writeText(email).then(() => {
+        mostrarAvisoCopiado();
+    }).catch(err => {
+        alert('Erro ao copiar email: ' + err);
+    });
+}
+
+function mostrarAvisoCopiado() {
+    const msg = document.getElementById('copiado-msg');
+    msg.style.display = 'block';
+
+    setTimeout(() => {
+        msg.style.display = 'none';
+        document.getElementById('popup-email').style.display = 'none'; // Fecha pop-up depois de copiar
+    }, 2000);
+}
